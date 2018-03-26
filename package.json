@@ -1,0 +1,29 @@
+{
+  "name": "acme-bank-portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadmzak/acme-bank-portal.git"
+  },
+  "author": "Ahmed Zakir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmadmzak/acme-bank-portal/issues"
+  },
+  "homepage": "https://github.com/ahmadmzak/acme-bank-portal#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
+  }
+}
