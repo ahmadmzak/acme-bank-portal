@@ -12,9 +12,9 @@ const db = mongoose.connection;
 const User = require("./models/users");
 
 app.get("/api/users/:username", (req, res) => {
-  User.find((err, user) => {
+  User.find({ username: req.params.username }, (err, user) => {
     if (err) res.send(err);
-    res.json(user);
+    res.json(user[0]);
   });
 });
 
