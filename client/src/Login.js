@@ -15,14 +15,18 @@ class Login extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="container">
         <input
           type="text"
+          placeholder="username"
+          className="login"
           value={this.state.value}
           onChange={this.handleChange}
         />
         <br />
-        <button onClick={this.handleClick}>Login</button>
+        <button className="login" onClick={this.handleClick}>
+          login
+        </button>
       </div>
     );
   }

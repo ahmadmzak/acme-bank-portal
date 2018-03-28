@@ -15,52 +15,67 @@ class Profile extends Component {
   };
   render() {
     return (
-      <div>
-        <label>Customer Id: {this.props.info.id}</label>
-        <br />
-        <label>Name: {this.props.info.name}</label>
-        <br />
-        <label>
-          Email:{" "}
-          {this.state.edit ? (
-            <input
-              type="text"
-              name="email"
-              value={this.props.info.email}
-              onChange={this.handleChange}
-            />
-          ) : (
-            this.props.info.email
-          )}
-        </label>
-        <br />
-        <label>
-          Phone:{" "}
-          {this.state.edit ? (
-            <input
-              type="text"
-              name="phone"
-              value={this.props.info.phone}
-              onChange={this.handleChange}
-            />
-          ) : (
-            this.props.info.phone
-          )}
-        </label>
-        <br />
-        <label>
-          Address:{" "}
-          {this.state.edit ? (
-            <textarea
-              type="text"
-              name="address"
-              value={this.props.info.address}
-              onChange={this.handleChange}
-            />
-          ) : (
-            this.props.info.address
-          )}
-        </label>
+      <div className="container">
+        <h3>Personal Information</h3>
+        <div className="table-container">
+          <table>
+            <tbody>
+              <tr>
+                <td>Id:</td>
+                <td>{this.props.info.id}</td>
+              </tr>
+              <tr>
+                <td>Name:</td>
+                <td>{this.props.info.name}</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                {this.state.edit ? (
+                  <td>
+                    <input
+                      type="text"
+                      name="email"
+                      value={this.props.info.email}
+                      onChange={this.handleChange}
+                    />
+                  </td>
+                ) : (
+                  <td>{this.props.info.email}</td>
+                )}
+              </tr>
+              <tr>
+                <td>Phone:</td>
+                {this.state.edit ? (
+                  <td>
+                    <input
+                      type="text"
+                      name="phone"
+                      value={this.props.info.phone}
+                      onChange={this.handleChange}
+                    />
+                  </td>
+                ) : (
+                  <td>{this.props.info.phone}</td>
+                )}
+              </tr>
+              <tr>
+                <td>Address:</td>
+                {this.state.edit ? (
+                  <td>
+                    <textarea
+                      type="text"
+                      name="address"
+                      value={this.props.info.address}
+                      onChange={this.handleChange}
+                    />
+                  </td>
+                ) : (
+                  <td>{this.props.info.address}</td>
+                )}
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <button onClick={this.toggleEdit}>
           {this.state.edit ? "Save" : "Edit"}
         </button>

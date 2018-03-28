@@ -51,8 +51,11 @@ class App extends Component {
     };*/
     this.state = {
       login: false,
-      view: "dashboard"
+      view: "profile"
     };
+  }
+  componentDidMount() {
+    this.handleLogin("junior425");
   }
   updateInfo = (key, value) => {
     this.setState({ [key]: value });
@@ -80,7 +83,7 @@ class App extends Component {
   };
   render() {
     let View = {};
-    if (this.userinfo) {
+    if (this.state.login) {
       View.dashboard = (
         <Dashboard
           accounts={this.userinfo.accounts}
