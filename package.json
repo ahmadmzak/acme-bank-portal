@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "yarn && node install-client.js",
+    "install": "node install && node install-client.js",
     "client": "node start-client.js",
     "server": "nodemon server.js",
     "start": "concurrently \"yarn server\" \"yarn client\""
