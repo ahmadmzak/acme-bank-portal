@@ -11,16 +11,21 @@ class Profile extends Component {
     Validates phone numbers with country codes
     Example: +XX.XXXX.XXXX, +XX XXXX XXXX, or +XX-XXXX-XXXX
   */
-  isValidPhone = number =>
-    /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(number);
-  isValidEmail = email =>
-    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
-  isValid = () =>
-    this.props.info.email &&
-    this.isValidEmail(this.props.info.email) &&
-    this.props.info.phone &&
-    this.isValidPhone(this.props.info.phone) &&
-    this.props.info.address;
+  isValidPhone = number => {
+    return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(number);
+  };
+  isValidEmail = email => {
+    return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
+  };
+  isValid = () => {
+    return (
+      this.props.info.email &&
+      this.isValidEmail(this.props.info.email) &&
+      this.props.info.phone &&
+      this.isValidPhone(this.props.info.phone) &&
+      this.props.info.address
+    );
+  };
   toggleEdit = () => {
     if (this.isValid()) this.setState({ edit: !this.state.edit });
   };

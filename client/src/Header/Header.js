@@ -10,6 +10,10 @@ const Header = props => {
     event.preventDefault();
     props.handleNav(event.target.id);
   };
+  const style = {
+    backgroundColor: "#43a047",
+    padding: "0.5rem"
+  };
   return (
     <nav className="header">
       <a className="header-brand" href="" id="brand" onClick={this.handleBrand}>
@@ -19,17 +23,32 @@ const Header = props => {
       {props.login ? (
         <ul className="header-nav">
           <li>
-            <a href="" id="dashboard" onClick={this.handleClick}>
+            <a
+              href=""
+              id="dashboard"
+              style={props.view === "dashboard" ? style : {}}
+              onClick={this.handleClick}
+            >
               Dashboard
             </a>
           </li>
           <li>
-            <a href="" id="profile" onClick={this.handleClick}>
+            <a
+              href=""
+              id="profile"
+              style={props.view === "profile" ? style : {}}
+              onClick={this.handleClick}
+            >
               Profile
             </a>
           </li>
           <li>
-            <a href="" id="transactions" onClick={this.handleClick}>
+            <a
+              href=""
+              id="transactions"
+              style={props.view === "transactions" ? style : {}}
+              onClick={this.handleClick}
+            >
               Transactions
             </a>
           </li>

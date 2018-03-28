@@ -1,6 +1,9 @@
 import React from "react";
 
 const Dashboard = props => {
+  this.formatStr = str => {
+    return str && str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
   return (
     <div className="container">
       <div className="table-container">
@@ -18,10 +21,9 @@ const Dashboard = props => {
           <tbody>
             {props.accounts.map((acc, idx) => (
               <tr key={idx}>
-                <td>{`${acc.type[0].toUpperCase() +
-                  acc.type.substring(1).toLowerCase()} Account`}</td>
+                <td>{`${this.formatStr(acc.type)} Account`}</td>
                 <td>{acc.account_number}</td>
-                <td>USD</td>
+                <td>{acc.account_currency}</td>
                 <td>{acc.balance.toFixed(2)}</td>
               </tr>
             ))}

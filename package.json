@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client": "cd client && yarn start",
+    "install": "yarn && node install-client.js",
+    "client": "node start-client.js",
     "server": "nodemon server.js",
-    "dev": "concurrently \"yarn server\" \"yarn client\""
+    "start": "concurrently \"yarn server\" \"yarn client\""
   },
   "repository": {
     "type": "git",

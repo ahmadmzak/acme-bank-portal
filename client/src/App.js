@@ -1,62 +1,22 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import StatusBar from "./StatusBar";
-import Login from "./Login";
-import Dashboard from "./Dashboard";
-import Profile from "./Profile";
-import Transactions from "./Transactions";
+import Header from "./Header/Header";
+import StatusBar from "./StatusBar/StatusBar";
+import Login from "./Login/Login";
+import Dashboard from "./Dashboard/Dashboard";
+import Profile from "./Profile/Profile";
+import Transactions from "./Transactions/Transactions";
 import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    /*this.userinfo = {
-      accounts: [
-        {
-          transactions: [
-            {
-              date: "02/28/2018",
-              transaction: "WWW.AMAZON.COM USA 50.00 871397133470",
-              currency: "USD",
-              deposit: 0,
-              withdrawal: 50,
-              closing: 223
-            }
-          ],
-          type: "current",
-          account_number: 1290127890123,
-          balance: 223
-        },
-        {
-          transactions: [
-            {
-              date: "02/19/2018",
-              transaction: "ATM TFR",
-              currency: "USD",
-              deposit: 500,
-              withdrawal: 0,
-              closing: 7500
-            }
-          ],
-          type: "savings",
-          account_number: 2945278501244,
-          balance: 7500
-        }
-      ],
-      _id: "5ab941fc7279b47986e49ef4",
-      username: "zillah",
-      name: "Zillah Lutjens",
-      email: "Zillah.Lutjens@examp8le.com",
-      phone: "+1259 637 3382",
-      address: "1093, 5th St, Brookings, Curry, Oregon"
-    };*/
     this.state = {
       login: false,
       view: "dashboard"
     };
   }
   componentDidMount() {
-    //this.handleLogin("junior425");
+    //this.handleLogin("junior");
   }
   updateInfo = (key, value) => {
     this.setState({ [key]: value });
@@ -102,6 +62,7 @@ class App extends Component {
         <Header
           login={this.state.login}
           name={this.state.name}
+          view={this.state.view}
           handleNav={this.updateView}
         />
         {this.state.login ? (

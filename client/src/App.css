@@ -104,11 +104,10 @@ textarea {
   .container {
     height: 100vh;
   }
-  /*.table-container,*/
+  .table-container,
   .profile {
     width: 100vw;
     height: auto;
-    margin-top: calc(60vh - 10rem);
     padding: 0 2rem;
   }
 }

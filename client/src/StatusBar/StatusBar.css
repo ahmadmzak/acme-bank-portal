@@ -14,7 +14,6 @@
 }
 @media (max-width: 500px) {
   .status {
-    /*flex-direction: column;*/
     padding-top: 500px;
   }
 }
