@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
+import StatusBar from "./StatusBar";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import Profile from "./Profile";
@@ -51,11 +52,11 @@ class App extends Component {
     };*/
     this.state = {
       login: false,
-      view: "profile"
+      view: "dashboard"
     };
   }
   componentDidMount() {
-    this.handleLogin("junior425");
+    //this.handleLogin("junior425");
   }
   updateInfo = (key, value) => {
     this.setState({ [key]: value });
@@ -81,6 +82,9 @@ class App extends Component {
       console.error(err);
     }
   };
+  handleLogOut = () => {
+    this.setState({ login: false });
+  };
   render() {
     let View = {};
     if (this.state.login) {
@@ -95,9 +99,16 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Header login={this.state.login} handleNav={this.updateView} />
+        <Header
+          login={this.state.login}
+          name={this.state.name}
+          handleNav={this.updateView}
+        />
         {this.state.login ? (
-          View[this.state.view]
+          <div>
+            <StatusBar name={this.state.name} logOut={this.handleLogOut} />
+            {View[this.state.view]}
+          </div>
         ) : (
           <Login handleLogin={this.handleLogin} />
         )}
