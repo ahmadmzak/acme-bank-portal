@@ -6,7 +6,7 @@
   "scripts": {
     "client": "node start-client.js",
     "server": "nodemon server.js",
-    "start": "concurrently \"yarn server\" \"yarn client\""
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
