@@ -8,7 +8,7 @@ The backend uses Express and Mongoose. The frontend is done in React. Create-rea
 
 ## Installation and Testing
 
-To install the dependencies, type "npm install" and to run it on your node environment, type "npm start".
+Type "npm install" to install the backend dependencies and "cd client && npm install" to install the create-react-app dependencies. To run it on your node environment, type "npm start".
 
 ## Features
 
